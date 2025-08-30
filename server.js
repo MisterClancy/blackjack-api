@@ -11,6 +11,9 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL, 
   ssl: { rejectUnauthorized: false } 
 });
+app.get("/", (req, res) => {
+  res.send("API rodando!");
+});
 
 // Endpoint para verificar chave
 app.post("/check-key", async (req, res) => {
